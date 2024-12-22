@@ -20,4 +20,6 @@ clicked = tk.StringVar(value=0)
 first_label = ttk.Label(main, text="Clicks: 0", font=fontApp)
 first_label.grid(row=0, column=0, padx=(0, 10))
 
+age_label = ttk.Button(main, text="Click me", command= lambda : print("clicked"))
+age_label.grid(row=1, column=0, padx=(0, 10))
 root.mainloop()
