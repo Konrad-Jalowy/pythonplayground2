@@ -37,7 +37,7 @@ input_entry.grid(row=0, column=1, padx=(0, 10), ipady=5)
 output_label = ttk.Label(main_frame, text="Fahr:", font=fontApp)
 output_label.grid(row=1, column=0, padx=(0, 10))
 
-output_entry = ttk.Entry(main_frame, textvariable=converted_text)
+output_entry = ttk.Entry(main_frame, textvariable=converted_text, state="readonly")
 output_entry.grid(row=1, column=1, padx=(0, 10), ipady=5)
 
 btn = tk.Button(main_frame, text="Convert", font=fontApp, command=click_handler)
