@@ -20,6 +20,7 @@ user_age = tk.StringVar()
 
 first_label = ttk.Label(main, text="First Name:").grid(row=0, column=0, padx=(0, 10))
 first_entry = ttk.Entry(main, width=15, textvariable=first_name).grid(row=0, column=1, padx=(0, 10), sticky="we")
+#FIRST ENTRY IS NONE, WE SHOULDNT EVEN CREATE VARIABLE, IF THATS HOW WE PLAY
 
 last_label = ttk.Label(main, text="Last Name:").grid(row=1, column=0, padx=(0, 10))
 
