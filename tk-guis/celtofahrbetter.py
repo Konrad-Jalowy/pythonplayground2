@@ -2,6 +2,12 @@ import tkinter as tk
 from tkinter import ttk
 import tkinter.font as tkFont
 
+def callback(P):
+    if str.isdigit(P) or P == "":
+        return True
+    else:
+        return False
+
 def cel_to_fahr(cel):
     return (cel * 1.8) + 32
 
