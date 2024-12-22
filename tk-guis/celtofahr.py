@@ -13,6 +13,9 @@ root.resizable(False, False)
 
 fontApp = tkFont.Font(size=16)
 
+cel = tk.DoubleVar(value=0)
+converted_text = tk.StringVar(value="Enter value in Celsius and convert do Fahr")
+
 main_frame = ttk.Frame(root, padding=(20, 10, 20, 0))
 main_frame.grid(row=0, column=0)
 
