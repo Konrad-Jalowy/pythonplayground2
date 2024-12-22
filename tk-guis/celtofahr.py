@@ -35,4 +35,7 @@ output_label.grid(row=1, column=0, padx=(0, 10))
 output_entry = ttk.Entry(main_frame, textvariable=converted_text)
 output_entry.grid(row=1, column=1, padx=(0, 10), ipady=5)
 
+btn = tk.Button(main_frame, text="Convert", font=fontApp)
+btn.grid(row=2, column=0, columnspan=2, padx=(0, 10), sticky="ew")
+
 root.mainloop()
