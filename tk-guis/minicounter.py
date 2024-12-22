@@ -6,7 +6,8 @@ def clickHandler():
     current_sum = int(clicked.get())
     current_sum += 1
     print(current_sum)
-    
+    clicked.set(current_sum)
+
 root = tk.Tk()
 root.title("Greeter")
 root.geometry("800x600")
