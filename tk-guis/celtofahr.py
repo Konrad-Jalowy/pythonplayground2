@@ -23,10 +23,16 @@ converted_text = tk.StringVar(value="")
 main_frame = ttk.Frame(root, padding=(20, 10, 20, 0))
 main_frame.grid(row=0, column=0)
 
+input_label = ttk.Label(main_frame, text="Cel:", font=fontApp)
+input_label.grid(row=0, column=0, padx=(0, 10))
+
+input_entry = ttk.Entry(main_frame, textvariable=cel_text)
+input_entry.grid(row=0, column=1, padx=(0, 10), ipady=5)
+
 output_label = ttk.Label(main_frame, text="Fahr:", font=fontApp)
-output_label.grid(row=0, column=0, padx=(0, 10))
+output_label.grid(row=1, column=0, padx=(0, 10))
 
 output_entry = ttk.Entry(main_frame, textvariable=converted_text)
-output_entry.grid(row=0, column=1, padx=(0, 10), ipady=5)
+output_entry.grid(row=1, column=1, padx=(0, 10), ipady=5)
 
 root.mainloop()
