@@ -6,7 +6,10 @@ def cel_to_fahr(cel):
     return (cel * 1.8) + 32
 
 def click_handler():
-    print("clicked")
+    _cel = float(cel_text.get())
+    _fahr = cel_to_fahr(_cel)
+    converted_text.set(f"{_fahr}")
+
 
 root = tk.Tk()
 root.title("Cel to Fahr Converter")
