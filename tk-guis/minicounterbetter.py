@@ -2,8 +2,6 @@ import tkinter as tk
 from tkinter import ttk
 import tkinter.font as tkFont
 
-
-
 def clickHandler():
     click_number = clicked_counter.get()
     click_number += 1
