@@ -17,6 +17,7 @@ root.rowconfigure(0, weight=1)
 fontApp = tkFont.Font(size=16)
 
 cel = tk.DoubleVar(value=0)
+cel_text = tk.StringVar(value="")
 converted_text = tk.StringVar(value="")
 
 main_frame = ttk.Frame(root, padding=(20, 10, 20, 0))
