@@ -29,7 +29,7 @@ last_entry.grid(row=1, column=1, padx=(0, 10), sticky="we")
 
 
 age_label = ttk.Label(main, text="Age:").grid(row=2, column=0, padx=(0, 10))
-age_entry = tk.Spinbox(main, from_=18, to=100, textvariable=user_age)
+age_entry = tk.Spinbox(main, from_=18, to=100, textvariable=user_age, wrap=False)
 age_entry.grid(row=2, column=1, padx=(0, 10), sticky="we")
 
 root.mainloop()
