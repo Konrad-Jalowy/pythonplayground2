@@ -19,4 +19,7 @@ converted_text = tk.StringVar(value="Enter value in Celsius and convert do Fahr"
 main_frame = ttk.Frame(root, padding=(20, 10, 20, 0))
 main_frame.grid(row=0, column=0)
 
+output_entry = ttk.Entry(main_frame, width=15, textvariable=converted_text)
+output_entry.grid(row=0, column=0, padx=(0, 10), ipady=5, sticky="we")
+
 root.mainloop()
