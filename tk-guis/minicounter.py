@@ -15,7 +15,7 @@ fontApp = tkFont.Font(size=16)
 main = ttk.Frame(root, padding=(20, 10, 20, 0))
 main.grid(row=0, column=0)
 
-
+clicked = tk.StringVar(value=0)
 
 
 root.mainloop()
