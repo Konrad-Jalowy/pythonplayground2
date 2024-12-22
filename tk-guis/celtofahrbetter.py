@@ -22,6 +22,8 @@ root.title("Cel to Fahr Converter")
 root.geometry("800x600")
 root.resizable(False, False)
 
+vcmd = root.register(callback)
+
 root.columnconfigure(0, weight=1)
 root.rowconfigure(0, weight=1)
 
@@ -37,7 +39,7 @@ main_frame.grid(row=0, column=0)
 input_label = ttk.Label(main_frame, text="Cel:", font=fontApp)
 input_label.grid(row=0, column=0, padx=(0, 10))
 
-input_entry = ttk.Entry(main_frame, textvariable=cel_text)
+input_entry = ttk.Entry(main_frame, textvariable=cel_text,  validate='all', validatecommand=(vcmd, '%P'))
 input_entry.grid(row=0, column=1, padx=(0, 10), ipady=5)
 
 output_label = ttk.Label(main_frame, text="Fahr:", font=fontApp)
