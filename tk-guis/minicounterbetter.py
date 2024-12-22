@@ -5,10 +5,10 @@ import tkinter.font as tkFont
 
 
 def clickHandler():
-    click_number = int(clicked.get())
+    click_number = clicked_counter.get()
     click_number += 1
-    clicked.set(click_number)
-    click_label.configure(text=f"Clicks: {click_number}")
+    clicked_counter.set(click_number)
+    clicked_text.set(f"Clicked: {clicked_counter.get()}")
 
 root = tk.Tk()
 root.title("Greeter")
