@@ -11,6 +11,9 @@ root.title("Cel to Fahr Converter")
 root.geometry("800x600")
 root.resizable(False, False)
 
+root.columnconfigure(0, weight=1)
+root.rowconfigure(0, weight=1)
+
 fontApp = tkFont.Font(size=16)
 
 cel = tk.DoubleVar(value=0)
