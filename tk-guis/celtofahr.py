@@ -11,4 +11,9 @@ root.title("Cel to Fahr Converter")
 root.geometry("800x600")
 root.resizable(False, False)
 
+fontApp = tkFont.Font(size=16)
+
+main_frame = ttk.Frame(root, padding=(20, 10, 20, 0))
+main_frame.grid(row=0, column=0)
+
 root.mainloop()
