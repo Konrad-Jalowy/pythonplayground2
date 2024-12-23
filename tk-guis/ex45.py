@@ -12,8 +12,6 @@ class MyApp(tk.Tk):
         self.rowconfigure(0, weight=1)
         self.columnconfigure(0, weight=1)
         
-       
-
         container = ttk.Frame(self)
         container.grid(padx=10, pady=10)
 
@@ -33,7 +31,7 @@ class FirstFrame(ttk.Frame):
     def __init__(self, container, controller):
         super().__init__(container)
 
-        frame_label = ttk.Label(self, text="First Frame")
+        frame_label = ttk.Label(self, text="First Frame", anchor="center")
         frame_label.grid(column=0, row=0, sticky="EW", ipadx=5)
         
         switch_page_button = ttk.Button(
@@ -47,7 +45,7 @@ class SecondFrame(ttk.Frame):
     def __init__(self, container, controller):
         super().__init__(container)
 
-        frame_label = ttk.Label(self, text="Second Frame")
+        frame_label = ttk.Label(self, text="Second Frame", anchor="center")
         frame_label.grid(column=0, row=0, sticky="EW", ipadx=5)
 
         switch_page_button = ttk.Button(
