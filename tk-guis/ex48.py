@@ -1,9 +1,23 @@
 import tkinter as tk
 from tkinter import ttk 
 from tkinter import filedialog as fd
+from tkinter.messagebox import showinfo
 
 def clickhandler():
-    print("clicked")
+    filetypes = (
+        ('text files', '*.txt'),
+        ('All files', '*.*')
+    )
+
+    filename = fd.askopenfilename(
+        title='Open a file',
+        initialdir='/',
+        filetypes=filetypes)
+
+    showinfo(
+        title='Selected File',
+        message=filename
+    )
 
 root = tk.Tk()
 root.title("File Dialog App")
