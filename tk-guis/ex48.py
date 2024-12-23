@@ -1,7 +1,10 @@
 import tkinter as tk
+import os
 from tkinter import ttk 
 from tkinter import filedialog as fd
 from tkinter.messagebox import showinfo
+
+main_directory = os.path.dirname(os.path.realpath(__file__))
 
 def clickhandler():
     filetypes = (
@@ -11,7 +14,7 @@ def clickhandler():
 
     filename = fd.askopenfilename(
         title='Open a file',
-        initialdir='/',
+        initialdir=main_directory,
         filetypes=filetypes)
 
     showinfo(
