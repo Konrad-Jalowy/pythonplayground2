@@ -9,4 +9,8 @@ root.geometry("800x600")
 main_frame = tk.Frame(root)
 main_frame.grid()
 
+btn = ttk.Button(main_frame,text="Upload File")
+btn.grid()
+           
+
 root.mainloop()
