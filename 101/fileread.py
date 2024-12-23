@@ -7,4 +7,4 @@ lines = fh.readlines()
 fh.close()
 
 for line in lines:
-    print(line)
+    print(line.rstrip("\n"))
