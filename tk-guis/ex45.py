@@ -9,8 +9,13 @@ class MyApp(tk.Tk):
         self.title("My App")
         self.frames = dict()
 
+        self.rowconfigure(0, weight=1)
+        self.columnconfigure(0, weight=1)
+        
+       
+
         container = ttk.Frame(self)
-        container.grid(padx=10, pady=10, sticky="EW")
+        container.grid(padx=10, pady=10)
 
         for FrameClass in (FirstFrame, SecondFrame):
             frame = FrameClass(container, self)
