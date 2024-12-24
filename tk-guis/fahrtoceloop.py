@@ -48,15 +48,17 @@ class UserInputFrame(ttk.Frame):
         self.btn.grid(row=2, column=0, columnspan=2, sticky="ew")
     
     def clickhandler(self):
-        _cel = float(self.cel_text.get())
-        _fahr = self.cel_to_fahr(_cel)
-        self.converted_text.set(f"{_fahr}")
+        _fahr = float(self.fahr_text.get())
+        _cel = self.fahr_to_cel(_fahr)
+        self.converted_text.set(f"{_cel}")
 
-    def fahrenheit_to_celsius(fahrenheit): 
+    def fahr_to_cel(fahrenheit): 
         celsius = (fahrenheit - 32) * 5 / 9 
         return celsius 
+
     def on_input_change(self, *args):
         self.converted_text.set(f"")
+
     def input_callback(self, P):
         if str.isdigit(P) or P == "":
             return True
