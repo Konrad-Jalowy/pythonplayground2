@@ -40,6 +40,8 @@ class CelToFahrFrame(ttk.Frame):
     def __init__(self, container, controller):
         super().__init__(container)
 
+        self.helper = Helper()
+
         self.vcmd = self.register(self.input_callback)
 
         self.cel_text = tk.StringVar(value="")
@@ -66,11 +68,9 @@ class CelToFahrFrame(ttk.Frame):
     
     def clickhandler(self):
         _cel = float(self.cel_text.get())
-        _fahr = self.cel_to_fahr(_cel)
+        _fahr = self.helper.cel_to_fahr(_cel)
         self.converted_text.set(f"{_fahr}")
 
-    def cel_to_fahr(self, cel):
-        return (cel * 1.8) + 32
     def on_input_change(self, *args):
         self.converted_text.set(f"")
     def input_callback(self, P):
