@@ -21,6 +21,9 @@ class TemperatureConverter(tk.Tk):
         for child in frame.winfo_children():
             child.configure(font=self.fontApp)
             
+    def show_frame(self, container):
+        frame = self.frames[container]
+        frame.tkraise()        
 
 class CelToFahrFrame(ttk.Frame):
     def __init__(self, container):
