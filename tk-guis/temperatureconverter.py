@@ -13,6 +13,7 @@ class TemperatureConverter(tk.Tk):
         self.columnconfigure(0, weight=1)
         self.rowconfigure(0, weight=1)
         self.fontApp = tkFont.Font(size=16)
+        self.frames = dict()
 
         frame = UserInputFrame(self)
         frame.grid()
