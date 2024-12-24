@@ -54,6 +54,11 @@ class UserInputFrame(ttk.Frame):
         return (cel * 1.8) + 32
     def on_input_change(self, *args):
         self.converted_text.set(f"")
+    def input_callback(self, P):
+        if str.isdigit(P) or P == "":
+            return True
+        else:
+            return False
     
 root = CelToFahrConverter()
 root.mainloop()
