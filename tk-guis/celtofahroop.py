@@ -7,7 +7,7 @@ class CelToFahrConverter(tk.Tk):
         super().__init__()
 
         self.title("Cel to Fahr Converter")
-
+        self.geometry("800x600")
         frame = UserInputFrame(self)
         frame.pack()
 
