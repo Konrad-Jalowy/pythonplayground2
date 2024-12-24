@@ -1,12 +1,12 @@
 import tkinter as tk
 from tkinter import ttk
 
-class HelloWorld(tk.Tk):
+class CelToFahrConverter(tk.Tk):
 
     def __init__(self):
         super().__init__()
 
-        self.title("Hello World!")
+        self.title("Cel to Fahr Converter")
 
         frame = UserInputFrame(self)
         frame.pack()
@@ -30,5 +30,5 @@ class UserInputFrame(ttk.Frame):
 
 
 
-root = HelloWorld()
+root = CelToFahrConverter()
 root.mainloop()
