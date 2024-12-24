@@ -40,6 +40,9 @@ class UserInputFrame(ttk.Frame):
     
     def clickhandler(self):
         print("Click handler called")
+        _cel = float(self.cel_text.get())
+        _fahr = self.cel_to_fahr(_cel)
+        self.converted_text.set(f"{_fahr}")
 
     def cel_to_fahr(self, cel):
         return (cel * 1.8) + 32
