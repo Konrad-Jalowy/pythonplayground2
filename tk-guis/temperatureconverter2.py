@@ -47,7 +47,7 @@ class CelToFahrFrame(ttk.Frame):
 
         self.helper = Helper()
 
-        self.vcmd = self.register(self.input_callback)
+        self.vcmd = self.register(self.helper.input_callback)
 
         self.cel_text = tk.StringVar(value="")
         self.cel_text.trace_add("write", self.on_input_change)
@@ -78,18 +78,13 @@ class CelToFahrFrame(ttk.Frame):
 
     def on_input_change(self, *args):
         self.converted_text.set(f"")
-    def input_callback(self, P):
-        if str.isdigit(P) or P == "":
-            return True
-        else:
-            return False
-
+    
 class FahrToCelFrame(ttk.Frame):
     def __init__(self, container, controller):
         super().__init__(container)
 
         self.helper = Helper()
-        self.vcmd = self.register(self.input_callback)
+        self.vcmd = self.register(self.helper.input_callback)
 
         self.fahr_text = tk.StringVar(value="")
         self.fahr_text.trace_add("write", self.on_input_change)
@@ -123,10 +118,5 @@ class FahrToCelFrame(ttk.Frame):
     def on_input_change(self, *args):
         self.converted_text.set(f"")
 
-    def input_callback(self, P):
-        if str.isdigit(P) or P == "":
-            return True
-        else:
-            return False
 root = TemperatureConverter()
 root.mainloop()
