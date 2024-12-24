@@ -8,6 +8,11 @@ class Helper:
         return celsius 
     def cel_to_fahr(self, cel):
         return (cel * 1.8) + 32
+    def input_callback(self, P):
+        if str.isdigit(P) or P == "":
+            return True
+        else:
+            return False
 
 class TemperatureConverter(tk.Tk):
 
