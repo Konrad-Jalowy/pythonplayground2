@@ -21,25 +21,23 @@ class UserInputFrame(ttk.Frame):
         self.cel_text = tk.StringVar(value="")
         self.converted_text = tk.StringVar(value="")
 
-        label_input = ttk.Label(self, text="Temperature in Celsius: ")
-        entry_input = ttk.Entry(self, textvariable=self.cel_text)
+        self.label_input = ttk.Label(self, text="Temperature in Celsius: ")
+        self.entry_input = ttk.Entry(self, textvariable=self.cel_text)
 
-        label_output = ttk.Label(self, text="Temperature in Fahr: ")
-        entry_output = ttk.Entry(self, textvariable=self.converted_text, state="readonly")
+        self.label_output = ttk.Label(self, text="Temperature in Fahr: ")
+        self.entry_output = ttk.Entry(self, textvariable=self.converted_text, state="readonly")
         
-        btn = tk.Button(self, text="Convert", command=self.clickhandler)
+        self.btn = tk.Button(self, text="Convert", command=self.clickhandler)
 
-        label_input.grid(row=0, column=0, sticky="W")
-        entry_input.grid(row=0, column=1)
+        self.label_input.grid(row=0, column=0, sticky="W")
+        self.entry_input.grid(row=0, column=1)
 
-        label_output.grid(row=1, column=0, sticky="W")
-        entry_output.grid(row=1, column=1)
+        self.label_output.grid(row=1, column=0, sticky="W")
+        self.entry_output.grid(row=1, column=1)
 
-        
-        btn.grid(row=2, column=0, columnspan=2, sticky="ew")
+        self.btn.grid(row=2, column=0, columnspan=2, sticky="ew")
     
     def clickhandler(self):
-        print("Click handler called")
         _cel = float(self.cel_text.get())
         _fahr = self.cel_to_fahr(_cel)
         self.converted_text.set(f"{_fahr}")
@@ -47,8 +45,5 @@ class UserInputFrame(ttk.Frame):
     def cel_to_fahr(self, cel):
         return (cel * 1.8) + 32
     
-
-
-
 root = CelToFahrConverter()
 root.mainloop()
