@@ -13,8 +13,13 @@ class CelToFahrConverter(tk.Tk):
         self.columnconfigure(0, weight=1)
         self.rowconfigure(0, weight=1)
         self.fontApp = tkFont.Font(size=16)
+
         frame = UserInputFrame(self)
         frame.grid()
+        
+        for child in frame.winfo_children():
+            child.configure(font=self.fontApp)
+            
 
 class UserInputFrame(ttk.Frame):
     def __init__(self, container):
