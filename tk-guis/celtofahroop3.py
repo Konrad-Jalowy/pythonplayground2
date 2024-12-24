@@ -51,6 +51,8 @@ class UserInputFrame(ttk.Frame):
 
     def cel_to_fahr(self, cel):
         return (cel * 1.8) + 32
+    def on_input_change(self, *args):
+        converted_text.set(f"")
     
 root = CelToFahrConverter()
 root.mainloop()
