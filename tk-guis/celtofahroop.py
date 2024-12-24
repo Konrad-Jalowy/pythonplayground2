@@ -26,16 +26,24 @@ class UserInputFrame(ttk.Frame):
 
         label_output = ttk.Label(self, text="Temperature in Fahr: ")
         entry_output = ttk.Entry(self, textvariable=self.converted_text)
-      
+        
+        btn = tk.Button(self, text="Convert", command=self.clickhandler)
 
         label_input.grid(row=0, column=0, sticky="W")
         entry_input.grid(row=0, column=1)
 
         label_output.grid(row=1, column=0, sticky="W")
         entry_output.grid(row=1, column=1)
+
+        
+        btn.grid(row=2, column=0, columnspan=2, sticky="ew")
     
+    def clickhandler(self):
+        print("Click handler called")
+
     def greet(self):
         print(f"Hello, {self.user_input.get()}!")
+    
 
 
 
