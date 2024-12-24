@@ -25,12 +25,14 @@ class UserInputFrame(ttk.Frame):
     def __init__(self, container):
         super().__init__(container)
 
+        self.vcmd = self.register(self.input_callback)
+
         self.cel_text = tk.StringVar(value="")
         self.cel_text.trace_add("write", self.on_input_change)
         self.converted_text = tk.StringVar(value="")
 
         self.label_input = ttk.Label(self, text="Temperature in Celsius: ")
-        self.entry_input = ttk.Entry(self, textvariable=self.cel_text)
+        self.entry_input = ttk.Entry(self, textvariable=self.cel_text, validate='all', validatecommand=(self.vcmd, '%P'))
 
         self.label_output = ttk.Label(self, text="Temperature in Fahr: ")
         self.entry_output = ttk.Entry(self, textvariable=self.converted_text, state="readonly")
