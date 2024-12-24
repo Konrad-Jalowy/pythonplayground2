@@ -15,18 +15,22 @@ class TemperatureConverter(tk.Tk):
         self.fontApp = tkFont.Font(size=16)
         self.frames = dict()
 
-        frame = FahrToCelFrame(self)
-        frame.grid()
+        container = ttk.Frame(self)
+        container.grid()
         
-        for child in frame.winfo_children():
-            child.configure(font=self.fontApp)
-            
+        for FrameClass in (CelToFahrFrame, FahrToCelFrame):
+            frame = FrameClass(container, self)
+            self.frames[FrameClass] = frame
+            frame.grid(row=0, column=0, sticky="NSEW")
+
+        self.show_frame(FahrToCelFrame)
+
     def show_frame(self, container):
         frame = self.frames[container]
         frame.tkraise()        
 
 class CelToFahrFrame(ttk.Frame):
-    def __init__(self, container):
+    def __init__(self, container, controller):
         super().__init__(container)
 
         self.vcmd = self.register(self.input_callback)
@@ -67,7 +71,7 @@ class CelToFahrFrame(ttk.Frame):
             return False
 
 class FahrToCelFrame(ttk.Frame):
-    def __init__(self, container):
+    def __init__(self, container, controller):
         super().__init__(container)
 
         self.vcmd = self.register(self.input_callback)
