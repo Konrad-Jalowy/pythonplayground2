@@ -52,8 +52,9 @@ class UserInputFrame(ttk.Frame):
         _fahr = self.cel_to_fahr(_cel)
         self.converted_text.set(f"{_fahr}")
 
-    def cel_to_fahr(self, cel):
-        return (cel * 1.8) + 32
+    def fahrenheit_to_celsius(fahrenheit): 
+        celsius = (fahrenheit - 32) * 5 / 9 
+        return celsius 
     def on_input_change(self, *args):
         self.converted_text.set(f"")
     def input_callback(self, P):
