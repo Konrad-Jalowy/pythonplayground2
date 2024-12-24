@@ -21,12 +21,15 @@ class UserInputFrame(ttk.Frame):
         self.cel_text = tk.StringVar(value="")
         self.converted_text = tk.StringVar(value="")
 
-        label = ttk.Label(self, text="Temperature in Celsius: ")
-        entry = ttk.Entry(self, textvariable=self.cel_text)
+        label_input = ttk.Label(self, text="Temperature in Celsius: ")
+        entry_input = ttk.Entry(self, textvariable=self.cel_text)
+
+        label_output = ttk.Label(self, text="Temperature in Celsius: ")
+        entry_output = ttk.Entry(self, textvariable=self.converted_text)
       
 
-        label.pack(side="left")
-        entry.pack(side="left")
+        label_input.grid(row=0, column=0)
+        entry_input.grid(row=0, column=1)
     
     def greet(self):
         print(f"Hello, {self.user_input.get()}!")
