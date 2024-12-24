@@ -19,6 +19,8 @@ class UserInputFrame(ttk.Frame):
         super().__init__(container)
 
         self.user_input = tk.StringVar()
+        self.cel_text = tk.StringVar(value="")
+        self.converted_text = tk.StringVar(value="")
 
         label = ttk.Label(self, text="Enter your name: ")
         entry = ttk.Entry(self, textvariable=self.user_input)
