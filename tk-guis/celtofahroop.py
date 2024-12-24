@@ -28,10 +28,10 @@ class UserInputFrame(ttk.Frame):
         entry_output = ttk.Entry(self, textvariable=self.converted_text)
       
 
-        label_input.grid(row=0, column=0)
+        label_input.grid(row=0, column=0, sticky="W")
         entry_input.grid(row=0, column=1)
 
-        label_output.grid(row=1, column=0)
+        label_output.grid(row=1, column=0, sticky="W")
         entry_output.grid(row=1, column=1)
     
     def greet(self):
