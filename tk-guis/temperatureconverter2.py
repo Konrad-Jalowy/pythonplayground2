@@ -2,6 +2,11 @@ import tkinter as tk
 from tkinter import ttk
 import tkinter.font as tkFont
 
+class Helper:
+    def fahr_to_cel(self, fahrenheit): 
+        celsius = (fahrenheit - 32) * 5 / 9 
+        return celsius 
+
 class TemperatureConverter(tk.Tk):
 
     def __init__(self):
