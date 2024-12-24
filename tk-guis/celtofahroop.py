@@ -9,8 +9,10 @@ class CelToFahrConverter(tk.Tk):
         self.title("Cel to Fahr Converter")
         self.geometry("800x600")
         self.resizable(False, False)
+        self.columnconfigure(0, weight=1)
+        self.rowconfigure(0, weight=1)
         frame = UserInputFrame(self)
-        frame.pack()
+        frame.grid()
 
 class UserInputFrame(ttk.Frame):
     def __init__(self, container):
