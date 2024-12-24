@@ -34,7 +34,7 @@ class UserInputFrame(ttk.Frame):
         self.label_input = ttk.Label(self, text="Temperature in Fahr: ")
         self.entry_input = ttk.Entry(self, textvariable=self.fahr_text, validate='all', validatecommand=(self.vcmd, '%P'))
 
-        self.label_output = ttk.Label(self, text="Temperature in Fahr: ")
+        self.label_output = ttk.Label(self, text="Temperature in Cel: ")
         self.entry_output = ttk.Entry(self, textvariable=self.converted_text, state="readonly")
         
         self.btn = tk.Button(self, text="Convert", command=self.clickhandler)
