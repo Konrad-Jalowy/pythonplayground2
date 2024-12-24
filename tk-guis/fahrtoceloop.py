@@ -52,7 +52,7 @@ class UserInputFrame(ttk.Frame):
         _cel = self.fahr_to_cel(_fahr)
         self.converted_text.set(f"{_cel}")
 
-    def fahr_to_cel(fahrenheit): 
+    def fahr_to_cel(self, fahrenheit): 
         celsius = (fahrenheit - 32) * 5 / 9 
         return celsius 
 
