@@ -3,6 +3,9 @@ from tkinter import ttk
 import tkinter.font as tkFont
 
 class Helper:
+    def __init__(self, parent):
+        parent.vcmd = parent.register(self.input_callback)
+
     def fahr_to_cel(self, fahrenheit): 
         celsius = (fahrenheit - 32) * 5 / 9 
         return celsius 
@@ -45,9 +48,7 @@ class CelToFahrFrame(ttk.Frame):
     def __init__(self, container, controller):
         super().__init__(container)
 
-        self.helper = Helper()
-
-        self.vcmd = self.register(self.helper.input_callback)
+        self.helper = Helper(self)
 
         self.cel_text = tk.StringVar(value="")
         self.cel_text.trace_add("write", self.on_input_change)
@@ -83,8 +84,7 @@ class FahrToCelFrame(ttk.Frame):
     def __init__(self, container, controller):
         super().__init__(container)
 
-        self.helper = Helper()
-        self.vcmd = self.register(self.helper.input_callback)
+        self.helper = Helper(self)
 
         self.fahr_text = tk.StringVar(value="")
         self.fahr_text.trace_add("write", self.on_input_change)
