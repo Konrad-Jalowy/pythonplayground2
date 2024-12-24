@@ -26,6 +26,7 @@ class UserInputFrame(ttk.Frame):
         super().__init__(container)
 
         self.cel_text = tk.StringVar(value="")
+        self.cel_text.trace_add("write", self.on_input_change)
         self.converted_text = tk.StringVar(value="")
 
         self.label_input = ttk.Label(self, text="Temperature in Celsius: ")
@@ -52,7 +53,7 @@ class UserInputFrame(ttk.Frame):
     def cel_to_fahr(self, cel):
         return (cel * 1.8) + 32
     def on_input_change(self, *args):
-        converted_text.set(f"")
+        self.converted_text.set(f"")
     
 root = CelToFahrConverter()
 root.mainloop()
