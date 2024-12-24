@@ -15,14 +15,14 @@ class TemperatureConverter(tk.Tk):
         self.fontApp = tkFont.Font(size=16)
         self.frames = dict()
 
-        frame = UserInputFrame(self)
+        frame = CelToFahrFrame(self)
         frame.grid()
         
         for child in frame.winfo_children():
             child.configure(font=self.fontApp)
             
 
-class UserInputFrame(ttk.Frame):
+class CelToFahrFrame(ttk.Frame):
     def __init__(self, container):
         super().__init__(container)
 
