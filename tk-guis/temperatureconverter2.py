@@ -5,7 +5,7 @@ import tkinter.font as tkFont
 class Helper:
     def __init__(self, parent):
         parent.vcmd = parent.register(self.input_callback)
-
+        
     def fahr_to_cel(self, fahrenheit): 
         celsius = (fahrenheit - 32) * 5 / 9 
         return celsius 
@@ -37,6 +37,9 @@ class TemperatureConverter(tk.Tk):
             frame = FrameClass(container, self)
             self.frames[FrameClass] = frame
             frame.grid(row=0, column=0, sticky="NSEW")
+            for child in frame.winfo_children():
+                child.configure(font=self.fontApp)
+        
 
         self.show_frame(FahrToCelFrame)
 
