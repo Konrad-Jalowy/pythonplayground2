@@ -46,6 +46,7 @@ class CelToFahrFrame(ttk.Frame):
         self.entry_output = ttk.Entry(self, textvariable=self.converted_text, state="readonly")
         
         self.btn = tk.Button(self, text="Convert", command=self.clickhandler)
+        
 
         self.label_input.grid(row=0, column=0, sticky="W")
         self.entry_input.grid(row=0, column=1)
@@ -87,6 +88,7 @@ class FahrToCelFrame(ttk.Frame):
         self.entry_output = ttk.Entry(self, textvariable=self.converted_text, state="readonly")
         
         self.btn = tk.Button(self, text="Convert", command=self.clickhandler)
+        self.btn2 = tk.Button(self, text="Cel to fahr", command=lambda: controller.show_frame(CelToFahrFrame))
 
         self.label_input.grid(row=0, column=0, sticky="W")
         self.entry_input.grid(row=0, column=1)
@@ -95,6 +97,7 @@ class FahrToCelFrame(ttk.Frame):
         self.entry_output.grid(row=1, column=1)
 
         self.btn.grid(row=2, column=0, columnspan=2, sticky="ew")
+        self.btn2.grid(row=3, column=0, columnspan=2, sticky="ew")
     
     def clickhandler(self):
         if self.fahr_text.get() == "":
