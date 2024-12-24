@@ -83,6 +83,7 @@ class FahrToCelFrame(ttk.Frame):
     def __init__(self, container, controller):
         super().__init__(container)
 
+        self.helper = Helper()
         self.vcmd = self.register(self.input_callback)
 
         self.fahr_text = tk.StringVar(value="")
@@ -111,12 +112,8 @@ class FahrToCelFrame(ttk.Frame):
         if self.fahr_text.get() == "":
             return
         _fahr = float(self.fahr_text.get())
-        _cel = self.fahr_to_cel(_fahr)
+        _cel = self.helper.fahr_to_cel(_fahr)
         self.converted_text.set(f"{_cel}")
-
-    def fahr_to_cel(self, fahrenheit): 
-        celsius = (fahrenheit - 32) * 5 / 9 
-        return celsius 
 
     def on_input_change(self, *args):
         self.converted_text.set(f"")
