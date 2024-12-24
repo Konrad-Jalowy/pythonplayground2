@@ -7,7 +7,7 @@ class CelToFahrConverter(tk.Tk):
     def __init__(self):
         super().__init__()
 
-        self.title("Cel to Fahr Converter")
+        self.title("Temperature Converter")
         self.geometry("800x600")
         self.resizable(False, False)
         self.columnconfigure(0, weight=1)
