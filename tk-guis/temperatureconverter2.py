@@ -6,6 +6,8 @@ class Helper:
     def fahr_to_cel(self, fahrenheit): 
         celsius = (fahrenheit - 32) * 5 / 9 
         return celsius 
+    def cel_to_fahr(self, cel):
+        return (cel * 1.8) + 32
 
 class TemperatureConverter(tk.Tk):
 
