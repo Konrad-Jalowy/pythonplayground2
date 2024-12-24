@@ -41,8 +41,8 @@ class UserInputFrame(ttk.Frame):
     def clickhandler(self):
         print("Click handler called")
 
-    def greet(self):
-        print(f"Hello, {self.user_input.get()}!")
+    def cel_to_fahr(self, cel):
+        return (cel * 1.8) + 32
     
 
 
