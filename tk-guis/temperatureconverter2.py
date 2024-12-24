@@ -5,6 +5,7 @@ import tkinter.font as tkFont
 class Helper:
     def __init__(self, parent):
         parent.vcmd = parent.register(self.input_callback)
+        self.converted_text = parent.converted_text
         
     def fahr_to_cel(self, fahrenheit): 
         celsius = (fahrenheit - 32) * 5 / 9 
@@ -16,6 +17,8 @@ class Helper:
             return True
         else:
             return False
+    def on_input_change(self, *args):
+        self.converted_text.set(f"")
 
 class TemperatureConverter(tk.Tk):
 
@@ -51,11 +54,12 @@ class CelToFahrFrame(ttk.Frame):
     def __init__(self, container, controller):
         super().__init__(container)
 
+        self.converted_text = tk.StringVar(value="")
         self.helper = Helper(self)
 
         self.cel_text = tk.StringVar(value="")
-        self.cel_text.trace_add("write", self.on_input_change)
-        self.converted_text = tk.StringVar(value="")
+        self.cel_text.trace_add("write", self.helper.on_input_change)
+        
 
         self.label_input = ttk.Label(self, text="Temperature in Celsius: ")
         self.entry_input = ttk.Entry(self, textvariable=self.cel_text, validate='all', validatecommand=(self.vcmd, '%P'))
@@ -80,18 +84,17 @@ class CelToFahrFrame(ttk.Frame):
         _fahr = self.helper.cel_to_fahr(_cel)
         self.converted_text.set(f"{_fahr}")
 
-    def on_input_change(self, *args):
-        self.converted_text.set(f"")
     
 class FahrToCelFrame(ttk.Frame):
     def __init__(self, container, controller):
         super().__init__(container)
 
+        self.converted_text = tk.StringVar(value="")
         self.helper = Helper(self)
 
         self.fahr_text = tk.StringVar(value="")
-        self.fahr_text.trace_add("write", self.on_input_change)
-        self.converted_text = tk.StringVar(value="")
+        self.fahr_text.trace_add("write", self.helper.on_input_change)
+        
 
         self.label_input = ttk.Label(self, text="Temperature in Fahr: ")
         self.entry_input = ttk.Entry(self, textvariable=self.fahr_text, validate='all', validatecommand=(self.vcmd, '%P'))
@@ -118,8 +121,6 @@ class FahrToCelFrame(ttk.Frame):
         _cel = self.helper.fahr_to_cel(_fahr)
         self.converted_text.set(f"{_cel}")
 
-    def on_input_change(self, *args):
-        self.converted_text.set(f"")
 
 root = TemperatureConverter()
 root.mainloop()
