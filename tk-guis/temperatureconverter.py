@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 import tkinter.font as tkFont
 
-class CelToFahrConverter(tk.Tk):
+class TemperatureConverter(tk.Tk):
 
     def __init__(self):
         super().__init__()
@@ -62,5 +62,5 @@ class UserInputFrame(ttk.Frame):
         else:
             return False
     
-root = CelToFahrConverter()
+root = TemperatureConverter()
 root.mainloop()
